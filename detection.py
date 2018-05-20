@@ -6,6 +6,7 @@ def get_match(image, train_list):
     cv2.namedWindow("image", cv2.WINDOW_NORMAL)
     image = cv2.imread(image)
     image = cv2.resize(image, (500, 300))
+    image = cv2.Canny(image, 500,100)
 
     match_lists = []
 
@@ -22,10 +23,10 @@ def get_match(image, train_list):
         kp_test, des_test = orb.detectAndCompute(image, None)
 
         # match_lists - list of how each image did compared to each sign
-        match_lists.append(sorted(bf.match(des, des_test), key = lambda x:x.distance))
+        match_lists.append(sorted(bf.match(des, des_test), key=lambda x: x.distance))
 
         # image with the matches drawn
-        img2 = cv2.drawMatches(img, kp, image, kp_test, match_lists[index][:25], None, flags=2)
+        img2 = cv2.drawMatches(img, kp, image, kp_test, match_lists[index][:30], None, flags=2)
 
         # lets you see each image and it's matches
         cv2.imshow('show', img2)
@@ -33,12 +34,12 @@ def get_match(image, train_list):
 
         index+=1
 
-    list = ["stop", "no turns", "one way left", "one way right", "road closed"]
+    list = ["stop", "no turns", "one way right", "one way left", "road closed"]
     index = 0
     # so this takes the average of first 10 in each match list and prints them out
     for i in match_lists:
         the_list = []
-        for j in i[:25]:
+        for j in i[:30]:
             the_list.append(j.distance)
         print(list[index], sum(the_list)/len(the_list))
         index += 1
@@ -49,7 +50,10 @@ def get_match(image, train_list):
 
 
 if __name__ == "__main__":
-    image_to_match = "one_way_left_test4.jpg" #place filepath of image here
+    image_to_match = "one_way_right_tester.jpg" #place filepath of image here
+    image_to_match = "one_way_left_test2.jpg" #place filepath of image here
+
+
 
     cv2.namedWindow("stop", cv2.WINDOW_NORMAL)
     stop = cv2.imread("stop.jpg")
@@ -65,14 +69,14 @@ if __name__ == "__main__":
 
     cv2.namedWindow("one_way_left", cv2.WINDOW_NORMAL)
     one_way_left = cv2.imread("one_way_left.png")
-    one_way_left = cv2.resize(one_way_left, (300, 300))
-    # one_way_left = cv2.Canny(one_way_left, 200,200)
+    # one_way_left = cv2.resize(one_way_left, (150, 100))
+    one_way_left = cv2.Canny(one_way_left, 200,200)
 
 
     cv2.namedWindow("one_way_right", cv2.WINDOW_NORMAL)
     one_way_right = cv2.imread("one_way_right.jpg")
-    one_way_right = cv2.resize(one_way_right, (300, 300))
-    # one_way_right = cv2.Canny(one_way_right, 200,200)
+    # one_way_right = cv2.resize(one_way_right,  (150, 100))
+    one_way_right = cv2.Canny(one_way_right, 200,200)
 
 
     cv2.namedWindow("road_closed", cv2.WINDOW_NORMAL)
