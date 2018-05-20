@@ -50,37 +50,37 @@ def get_match(image, train_list):
 
 
 if __name__ == "__main__":
-    image_to_match = "one_way_right_tester.jpg" #place filepath of image here
-    image_to_match = "one_way_left_test2.jpg" #place filepath of image here
+    image_to_match = "Images/one_way_right_tester.jpg" #place filepath of image here
+    image_to_match = "Images/one_way_left_test2.jpg" #place filepath of image here
 
 
 
     cv2.namedWindow("stop", cv2.WINDOW_NORMAL)
-    stop = cv2.imread("stop.jpg")
+    stop = cv2.imread("Images/stop.jpg")
     stop = cv2.resize(stop, (250, 250))
 
     # stop = cv2.Canny(stop, 100,200)
 
     cv2.namedWindow("no_turns", cv2.WINDOW_NORMAL)
-    no_turns = cv2.imread("no_turns.jpg")
+    no_turns = cv2.imread("Images/no_turns.jpg")
     no_turns = cv2.resize(no_turns, (100, 100))
     # no_turns = cv2.Canny(no_turns, 200,200)
 
 
     cv2.namedWindow("one_way_left", cv2.WINDOW_NORMAL)
-    one_way_left = cv2.imread("one_way_left.png")
+    one_way_left = cv2.imread("Images/one_way_left.png")
     # one_way_left = cv2.resize(one_way_left, (150, 100))
     one_way_left = cv2.Canny(one_way_left, 200,200)
 
 
     cv2.namedWindow("one_way_right", cv2.WINDOW_NORMAL)
-    one_way_right = cv2.imread("one_way_right.jpg")
+    one_way_right = cv2.imread("Images/one_way_right.jpg")
     # one_way_right = cv2.resize(one_way_right,  (150, 100))
     one_way_right = cv2.Canny(one_way_right, 200,200)
 
 
     cv2.namedWindow("road_closed", cv2.WINDOW_NORMAL)
-    road_closed = cv2.imread("road_closed.png")
+    road_closed = cv2.imread("Images/road_closed.png")
     road_closed = cv2.resize(road_closed, (100, 100))
     # road_closed = cv2.Canny(road_closed, 100,100)
 
