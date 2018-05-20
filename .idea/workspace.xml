@@ -2,23 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d586e076-4102-4078-a1c2-158ea90522de" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/no_turns.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/one_way_left.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/one_way_left_test2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/one_way_left_test3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/one_way_left_test4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/one_way_right.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/one_way_right_test.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/one_way_right_tester.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/road_closed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/stop.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/stop_test1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/stop_test2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/stop_test3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/stop_test4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/stop_test5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/stop_tester.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detection.py" afterPath="$PROJECT_DIR$/detection.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,11 +16,11 @@
       <file leaf-file-name="detection.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/detection.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="82" column="37" lean-forward="false" selection-start-line="82" selection-start-column="37" selection-end-line="82" selection-end-column="37" />
+            <state relative-caret-position="367">
+              <caret line="36" column="13" lean-forward="true" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <marker date="1526778836634" expanded="true" signature="710:837" ph="..." />
+                <marker date="1526779566082" expanded="true" signature="710:837" ph="..." />
               </folding>
             </state>
           </provider>
@@ -96,6 +79,11 @@
             <path>
               <item name="sign_processing" type="b2602c69:ProjectViewProjectNode" />
               <item name="sign_processing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sign_processing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sign_processing" type="462c0819:PsiDirectoryNode" />
+              <item name="Images" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -236,7 +224,7 @@
           <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <marker date="1526778836634" expanded="true" signature="710:837" ph="..." />
+            <marker date="1526779566082" expanded="true" signature="710:837" ph="..." />
           </folding>
         </state>
       </provider>
@@ -294,11 +282,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/detection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="82" column="37" lean-forward="false" selection-start-line="82" selection-start-column="37" selection-end-line="82" selection-end-column="37" />
+        <state relative-caret-position="367">
+          <caret line="36" column="13" lean-forward="true" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <marker date="1526778836634" expanded="true" signature="710:837" ph="..." />
+            <marker date="1526779566082" expanded="true" signature="710:837" ph="..." />
           </folding>
         </state>
       </provider>

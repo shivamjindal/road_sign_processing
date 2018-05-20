@@ -29,42 +29,36 @@ def get_match(image, train_list):
         img2 = cv2.drawMatches(img, kp, image, kp_test, match_lists[index][:30], None, flags=2)
 
         # lets you see each image and it's matches
-        cv2.imshow('show', img2)
-        cv2.waitKey(0)
-
+        # cv2.imshow('show', img2)
+        # cv2.waitKey(0)
         index+=1
 
-    list = ["stop", "no turns", "one way right", "one way left", "road closed"]
+    unique_signs = ["stop", "no turns", "one way right", "one way left", "road closed"]
     index = 0
     # so this takes the average of first 10 in each match list and prints them out
     for i in match_lists:
-        the_list = []
+        distance_list = []
         for j in i[:30]:
-            the_list.append(j.distance)
-        print(list[index], sum(the_list)/len(the_list))
+            distance_list.append(j.distance)
+        print(unique_signs[index], sum(distance_list)/len(distance_list))
         index += 1
-        # print(i[0].distance)
-
-
 
 
 
 if __name__ == "__main__":
     image_to_match = "Images/one_way_right_tester.jpg" #place filepath of image here
     image_to_match = "Images/one_way_left_test2.jpg" #place filepath of image here
-
-
+    image_to_match = "Images/no_turns.jpg" #place filepath of image here
 
     cv2.namedWindow("stop", cv2.WINDOW_NORMAL)
     stop = cv2.imread("Images/stop.jpg")
     stop = cv2.resize(stop, (250, 250))
-
     # stop = cv2.Canny(stop, 100,200)
 
     cv2.namedWindow("no_turns", cv2.WINDOW_NORMAL)
     no_turns = cv2.imread("Images/no_turns.jpg")
-    no_turns = cv2.resize(no_turns, (100, 100))
-    # no_turns = cv2.Canny(no_turns, 200,200)
+    # no_turns = cv2.resize(no_turns, (500, 300))
+    no_turns = cv2.Canny(no_turns, 200,200)
 
 
     cv2.namedWindow("one_way_left", cv2.WINDOW_NORMAL)
@@ -88,10 +82,3 @@ if __name__ == "__main__":
     train_image_list = [stop, no_turns, one_way_right, one_way_left, road_closed]
     print(image_to_match, '\n=========')
     get_match(image_to_match, train_image_list)
-
-    # cv2.namedWindow("image", cv2.WINDOW_NORMAL)
-    # image_to_match = cv2.imread(image_to_match)
-    # image_to_match = cv2.resize(image_to_match, (600, 600))
-    # image = cv2.Canny(image_to_match, 1000,200)
-    # cv2.imshow("image",image)
-    # cv2.waitKey(0)
