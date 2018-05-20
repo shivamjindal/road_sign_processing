@@ -2,7 +2,6 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 def get_match(image, train_list):
     cv2.namedWindow("image", cv2.WINDOW_NORMAL)
     image = cv2.imread(image)
