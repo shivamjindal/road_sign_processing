@@ -28,7 +28,6 @@ def get_match(image, train_list):
         cv2.MORPH_CLOSE,
         cv2.getStructuringElement(cv2.MORPH_RECT, (2, 2))
     )
-    # image = cv2.resize(image, None, fx = .7, fy = .7)
 
     matches = []
 
