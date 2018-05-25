@@ -23,12 +23,10 @@ def get_match(image, train_list):
     )
     image = cv2.resize(image, None, fx = .7, fy = .7)
 
-
-
     matches = []
 
-    orb = cv2.ORB_create()
-    bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
+    orb = cv2.ORB_create() # orb is a way to get the key points and descriptors of an image
+    bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)   # bfmatcher is a way to match key points and descriptors
 
     # just a counter
     index = 0
@@ -47,8 +45,8 @@ def get_match(image, train_list):
         img2 = cv2.drawMatchesKnn(img, kp, image, kp_test, matches[:10], None, flags=2)
 
         # lets you see each image and its matches
-        cv2.imshow('show', img2)
-        cv2.waitKey(0)  # note you have to press a button in order to move to the next image
+        # cv2.imshow('show', img2)
+        # cv2.waitKey(0)  # note you have to press a button in order to move to the next image
         index+=1
 
 
@@ -70,40 +68,32 @@ def get_match(image, train_list):
 
 
 if __name__ == "__main__":
-    image_to_match = "Images/one_way_left.png" #place filepath of image here
+    image_to_match = "Images/one_way_right.jpg" #place filepath of image here
     # image_to_match = "Images/one_way_left_test4.jpg" #place filepath of image here
     # image_to_match = "Images/stop.jpg" #place filepath of image here
 
     cv2.namedWindow("stop", cv2.WINDOW_NORMAL)
     stop = cv2.imread("Images/stop.jpg")
     stop = cv2.resize(stop, (300,300))
-    # stop = cv2.Canny(stop, 100,100)
 
     cv2.namedWindow("no_turns", cv2.WINDOW_NORMAL)
     no_turns = cv2.imread("Images/no_turns.jpg")
     no_turns = cv2.resize(no_turns, None, fx = .8, fy=.8)
-    # no_turns = cv2.Canny(no_turns, 200,200)
 
 
     cv2.namedWindow("one_way_left", cv2.WINDOW_NORMAL)
     one_way_left = cv2.imread("Images/one_way_left.png")
     one_way_left = cv2.resize(one_way_left,None, fx = .7, fy=.7)
-    # one_way_left = cv2.Canny(one_way_left, 200,200)
 
     cv2.namedWindow("one_way_right", cv2.WINDOW_NORMAL)
     one_way_right = cv2.imread("Images/one_way_right.jpg")
     one_way_right = cv2.resize(one_way_right, None, fx = .8, fy=.8)
 
-    # one_way_right = cv2.Canny(one_way_right, 200,200)
-
-
     cv2.namedWindow("road_closed", cv2.WINDOW_NORMAL)
     road_closed = cv2.imread("Images/road_closed.png")
     road_closed = cv2.resize(road_closed, None, fx = .5, fy=.5)
 
-
-
     train_image_list = [stop, no_turns, one_way_right, one_way_left, road_closed]
 
-    print(image_to_match, '\n=========')
+    print("TESTING FOR: \t", image_to_match, '\n========= \nNOTE: THE LOWER THE SCORE, THE MORE LIKELY IT IS THAT SIGN\n')
     get_match(image_to_match, train_image_list)
