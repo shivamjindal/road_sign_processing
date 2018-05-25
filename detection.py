@@ -5,6 +5,9 @@ import matplotlib.pyplot as plt
 
 """
 Given an image detected to be a sign, this will detect what kind of sign it is
+Note to whoever uses this afterwards: 
+    - make each image the same size of your desire and make each query image that same size
+        - this should get you better results    
 """
 
 
@@ -21,7 +24,7 @@ def get_match(image, train_list):
         cv2.MORPH_CLOSE,
         cv2.getStructuringElement(cv2.MORPH_RECT, (2, 2))
     )
-    image = cv2.resize(image, None, fx = .7, fy = .7)
+    # image = cv2.resize(image, None, fx = .7, fy = .7)
 
     matches = []
 
@@ -68,7 +71,7 @@ def get_match(image, train_list):
 
 
 if __name__ == "__main__":
-    image_to_match = "Images/one_way_right.jpg" #place filepath of image here
+    image_to_match = "Images/one_way_left.png" #place filepath of image here
     # image_to_match = "Images/one_way_left_test4.jpg" #place filepath of image here
     # image_to_match = "Images/stop.jpg" #place filepath of image here
 
@@ -78,12 +81,12 @@ if __name__ == "__main__":
 
     cv2.namedWindow("no_turns", cv2.WINDOW_NORMAL)
     no_turns = cv2.imread("Images/no_turns.jpg")
-    no_turns = cv2.resize(no_turns, None, fx = .8, fy=.8)
+    no_turns = cv2.resize(no_turns,(300,300))
 
 
     cv2.namedWindow("one_way_left", cv2.WINDOW_NORMAL)
     one_way_left = cv2.imread("Images/one_way_left.png")
-    one_way_left = cv2.resize(one_way_left,None, fx = .7, fy=.7)
+    # one_way_left = cv2.resize(one_way_left,None, fx = .6, fy=.6)
 
     cv2.namedWindow("one_way_right", cv2.WINDOW_NORMAL)
     one_way_right = cv2.imread("Images/one_way_right.jpg")
