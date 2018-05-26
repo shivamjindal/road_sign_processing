@@ -7,8 +7,6 @@ Dependencies
 ------------
 pytesseract
 
-
 opencv (3.4.1)
-
 
 numpy (1.13.3)
