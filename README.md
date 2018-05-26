@@ -5,6 +5,10 @@ This repository is to classify given images as one of 5 signs (stop, no turns, o
 
 Dependencies
 ------------
-pytesseract\n
-> opencv (3.4.1)\n
-> numpy (1.13.3)\n
+pytesseract
+
+
+opencv (3.4.1)
+
+
+numpy (1.13.3)
