@@ -10,7 +10,6 @@ import cv2
 import numpy as np
 from PIL import Image
 from pytesseract import image_to_string
-import matplotlib.pyplot as plt
 
 
 def get_dominant_color(img):
