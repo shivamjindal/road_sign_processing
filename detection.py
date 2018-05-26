@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 """
-Given an image detected to be a sign, this will detect what kind of sign it is
+Given an image detected to be a sign, this will recognize what kind of sign it is
 Note to whoever uses this afterwards: 
     - make each image the same size of your desire and make each query image that same size
         - this should get you better results    
