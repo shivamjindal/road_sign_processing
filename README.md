@@ -16,3 +16,7 @@ It first tries to simply see the main color within the image. If it is a red-lik
 * pytesseract
 * opencv (3.4.1)
 * numpy (1.13.3)
+
+## Improvements ##
+~To be completed~
+
