@@ -14,7 +14,11 @@ import matplotlib.pyplot as plt
 
 
 def get_dominant_color(img):
-    """"""
+    """
+
+    :param img:
+    :return:
+    """
     Z = img.reshape((-1, 3))
 
     # convert to np.float32
