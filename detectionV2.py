@@ -35,6 +35,7 @@ def get_dominant_color(img):
     res2 = cv2.resize(res2, (300,300))
     return res2[0][0]
 
+
 def is_dom_red(color):
     """
     ***NOTE: This needs to be updated and improved upon later
