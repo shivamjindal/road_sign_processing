@@ -25,10 +25,15 @@ def get_dominant_color(img):
     upper_red = np.array([300, 255, 255])
     # Threshold the HSV image to get only blue colors
     mask = cv2.inRange(hsv, lower_red, upper_red)
+
+    # What does mask look like?
+    # cv2.imshow('mask', mask)
+    # cv2.waitKey(0)
+
     # Bitwise-AND mask and original image
     img = cv2.bitwise_and(img, img, mask=mask)
-    cv2.imshow('r', img)
-    cv2.waitKey(0)
+    # cv2.imshow('mask AND original', img)
+    # cv2.waitKey(0)
 
 
     Z = img.reshape((-1, 3))
@@ -45,9 +50,10 @@ def get_dominant_color(img):
     center = np.uint8(center)
     res = center[label.flatten()]
     res2 = res.reshape((img.shape))
+
     res2 = cv2.resize(res2, (300,300))
-    cv2.imshow('a', res2)
-    cv2.waitKey(0)
+    # cv2.imshow('final dom color', res2)
+    # cv2.waitKey(0)
 
     return res2[0][0]
 
@@ -119,7 +125,7 @@ def get_match(image):
             return get_direction(image)
 
 if __name__ == "__main__":
-    test_image = "Images/road_closed_test_1.png" #place filepath of image here
+    test_image = "Images/stop_test_1.png" #place filepath of image here
 
     print("TESTING FOR: \t", test_image, '\n=========')
 
