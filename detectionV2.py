@@ -18,6 +18,19 @@ def get_dominant_color(img):
     :param img:
     :return:
     """
+    # Convert BGR to HSV
+    hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+    # define range of red color in HSV
+    lower_red = np.array([0, 70, 50])
+    upper_red = np.array([300, 255, 255])
+    # Threshold the HSV image to get only blue colors
+    mask = cv2.inRange(hsv, lower_red, upper_red)
+    # Bitwise-AND mask and original image
+    img = cv2.bitwise_and(img, img, mask=mask)
+    cv2.imshow('r', img)
+    cv2.waitKey(0)
+
+
     Z = img.reshape((-1, 3))
 
     # convert to np.float32
@@ -33,6 +46,9 @@ def get_dominant_color(img):
     res = center[label.flatten()]
     res2 = res.reshape((img.shape))
     res2 = cv2.resize(res2, (300,300))
+    cv2.imshow('a', res2)
+    cv2.waitKey(0)
+
     return res2[0][0]
 
 
@@ -41,9 +57,12 @@ def is_dom_red(color):
     ***NOTE: This needs to be updated and improved upon later
 
     Currently, this just checks to see if the red value in an image is the most prominent
+        - there is definitely a better version of this available
     :param color: bgr values of the provided image
     :return: True if the dominant color is red. False otherwise
     """
+
+
     if color[2] > color[0] and color[2] > color[1]:
         return True
     else:
@@ -92,13 +111,15 @@ def get_match(image):
     else:
         sign_words = read_sign(image).replace("\n", " ").strip()
         sign_words = sign_words.replace("0", "O")
-        if (sign_words == "NO TURNS" or sign_words == "ROAD CLOSED"):
-            return sign_words.replace("\n", " ")
+        if ("ROAD" in sign_words):
+            return "ROAD CLOSED"
+        elif ("TURNS" in sign_words):
+            return "NO TURNS"
         else:
             return get_direction(image)
 
 if __name__ == "__main__":
-    test_image = "Images/road_closed.png" #place filepath of image here
+    test_image = "Images/road_closed_test_1.png" #place filepath of image here
 
     print("TESTING FOR: \t", test_image, '\n=========')
 
