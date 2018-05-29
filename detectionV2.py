@@ -100,7 +100,12 @@ def get_direction(image):
     h, w = img.shape
 
     left_half = img[0:h, 0:int(w/2)]
+    # cv2.imshow("left", left_half)
+    # cv2.waitKey(0)
+
     right_half = img[0:h, int(w/2):w]
+    # cv2.imshow("right", right_half)
+    # cv2.waitKey(0)
 
     if cv2.countNonZero(left_half) > cv2.countNonZero(right_half):
         return "LEFT"
@@ -125,7 +130,7 @@ def get_match(image):
             return get_direction(image)
 
 if __name__ == "__main__":
-    test_image = "Images/stop_test_1.png" #place filepath of image here
+    test_image = "Images/one_way_left_test_1.png" #place filepath of image here
 
     print("TESTING FOR: \t", test_image, '\n=========')
 
