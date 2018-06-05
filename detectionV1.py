@@ -74,7 +74,7 @@ def get_match(image, train_list):
 
 
 if __name__ == "__main__":
-    image_to_match = "Images/stop_test_1.png" #place filepath of image here
+    image_to_match = "Images/one_way_left_test_1.png" #place filepath of image here
     # image_to_match = "Images/one_way_right_test_1.png" #place filepath of image here
     # image_to_match = "Images/road_closed_test_1.png" #place filepath of image here
 

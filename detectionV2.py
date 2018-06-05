@@ -27,8 +27,8 @@ def get_dominant_color(img):
     mask = cv2.inRange(hsv, lower_red, upper_red)
 
     # What does mask look like?
-    # cv2.imshow('mask', mask)
-    # cv2.waitKey(0)
+    cv2.imshow('mask', mask)
+    cv2.waitKey(0)
 
     # Bitwise-AND mask and original image
     img = cv2.bitwise_and(img, img, mask=mask)
@@ -82,7 +82,6 @@ def read_sign(image):
     :param image: the filepath for an image
     :return: the text in a given image
     """
-
     return(image_to_string(Image.open(image),lang='eng'))
 
 
@@ -96,6 +95,9 @@ def get_direction(image):
     """
     img = cv2.imread(image, 0)
     ret, img = cv2.threshold(img,127,255,cv2.THRESH_BINARY)
+
+    cv2.imshow('white', img)
+    cv2.waitKey(0)
 
     h, w = img.shape
 
@@ -130,7 +132,7 @@ def get_match(image):
             return get_direction(image)
 
 if __name__ == "__main__":
-    test_image = "Images/one_way_left_test_1.png" #place filepath of image here
+    test_image = "Images/one_way_right_test_1.png" #place filepath of image here
 
     print("TESTING FOR: \t", test_image, '\n=========')
 
